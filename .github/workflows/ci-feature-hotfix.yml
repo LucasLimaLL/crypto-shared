@@ -1,0 +1,234 @@
+# .github/workflows/ci-feature-hotfix.yml
+#
+# CI executado a cada push em branches feature/** e hotfix/**.
+# Roda em paralelo: build, test e lint.
+# Se TODOS passarem, abre automaticamente um PR para "develop"
+# e solicita o GitHub Copilot como revisor.
+#
+# Observação: para permitir que a Action abra PRs, habilite em
+#   Settings → Actions → General →
+#     "Allow GitHub Actions to create and approve pull requests"
+
+name: CI · feature / hotfix
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'hotfix/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # -------------------------------------------------------------------
+  # 1) Build — compila o projeto sem rodar testes
+  # -------------------------------------------------------------------
+  build:
+    name: Gradle Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'gradle'
+
+      - name: Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
+      - name: Gradle build (sem testes)
+        run: ./gradlew build -x test --no-daemon --stacktrace
+
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-libs
+          path: build/libs/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  # -------------------------------------------------------------------
+  # 2) Test — executa toda a suíte de testes
+  # -------------------------------------------------------------------
+  test:
+    name: Gradle Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'gradle'
+
+      - name: Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
+      - name: Gradle test
+        run: ./gradlew test --no-daemon --stacktrace
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: build/reports/tests/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  # -------------------------------------------------------------------
+  # 3) Lint — checagens estáticas e regras do projeto
+  #
+  # Regras aplicadas (vindas do CLAUDE.md):
+  #   • zero imports android.*
+  #   • zero imports com.google.firebase.*
+  #   • Java 21 fixado em build.gradle
+  # Também tenta rodar ./gradlew check (menos testes) — se houver
+  # plugins como checkstyle/spotless/spotbugs configurados, rodam aqui.
+  # -------------------------------------------------------------------
+  lint:
+    name: Lint & Rules
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'gradle'
+
+      - name: Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
+      - name: Regra — nenhum import android.*
+        run: |
+          set -e
+          echo "🔎 Procurando imports android.* em src/ ..."
+          if grep -R -nE '^\s*import\s+android\.' src/ ; then
+            echo "❌ Imports android.* não são permitidos neste módulo."
+            exit 1
+          fi
+          echo "✅ Nenhum import android.* encontrado."
+
+      - name: Regra — nenhum import com.google.firebase.*
+        run: |
+          set -e
+          echo "🔎 Procurando imports com.google.firebase.* em src/ ..."
+          if grep -R -nE '^\s*import\s+com\.google\.firebase\.' src/ ; then
+            echo "❌ Imports com.google.firebase.* não são permitidos neste módulo."
+            exit 1
+          fi
+          echo "✅ Nenhum import firebase encontrado."
+
+      - name: Regra — Java 21 em build.gradle
+        run: |
+          set -e
+          echo "🔎 Verificando Java 21 em build.gradle ..."
+          if ! grep -qE 'VERSION_21' build.gradle ; then
+            echo "❌ build.gradle precisa declarar Java 21 (VERSION_21)."
+            exit 1
+          fi
+          echo "✅ Java 21 configurado."
+
+      - name: Gradle check (lint plugins, se houver)
+        run: ./gradlew check -x test --no-daemon --stacktrace
+
+  # -------------------------------------------------------------------
+  # 4) Open PR — só roda se build, test e lint passarem.
+  #     Abre (ou reaproveita) um PR da branch atual para develop
+  #     e solicita o GitHub Copilot como revisor.
+  # -------------------------------------------------------------------
+  open-pr:
+    name: Abrir PR para develop
+    runs-on: ubuntu-latest
+    needs: [build, test, lint]
+    if: success()
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Abrir PR (ou reaproveitar existente) e pedir review do Copilot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_BRANCH: ${{ github.ref_name }}
+          BASE_BRANCH: develop
+        run: |
+          set -e
+
+          echo "🔧 HEAD=$HEAD_BRANCH  BASE=$BASE_BRANCH"
+
+          # Garante que a branch base existe no remoto
+          if ! git ls-remote --exit-code --heads origin "$BASE_BRANCH" >/dev/null 2>&1 ; then
+            echo "❌ Branch base '$BASE_BRANCH' não existe no remoto. Crie-a antes."
+            exit 1
+          fi
+
+          # Reaproveita PR aberto se já houver
+          EXISTING=$(gh pr list \
+            --head "$HEAD_BRANCH" \
+            --base "$BASE_BRANCH" \
+            --state open \
+            --json number \
+            --jq '.[0].number' || true)
+
+          if [ -n "$EXISTING" ] && [ "$EXISTING" != "null" ]; then
+            PR_NUMBER="$EXISTING"
+            echo "ℹ️  PR já existe: #$PR_NUMBER — será reaproveitado."
+          else
+            TITLE="CI ✅ $HEAD_BRANCH → $BASE_BRANCH"
+            BODY=$(cat <<EOF
+          PR criado automaticamente pelo workflow **CI · feature / hotfix**
+          após \`gradle build\`, \`gradle test\` e lint passarem em paralelo.
+
+          - Branch de origem: \`$HEAD_BRANCH\`
+          - Branch de destino: \`$BASE_BRANCH\`
+          - Commit: \`${{ github.sha }}\`
+          - Run: [#${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          Revisor automático: **GitHub Copilot**.
+          EOF
+          )
+
+            PR_NUMBER=$(gh pr create \
+              --head "$HEAD_BRANCH" \
+              --base "$BASE_BRANCH" \
+              --title "$TITLE" \
+              --body "$BODY" \
+              | sed -nE 's#.*/pull/([0-9]+).*#\1#p')
+
+            echo "✅ PR #$PR_NUMBER criado."
+          fi
+
+          # Solicita review do Copilot via API REST.
+          # O login do bot de review do Copilot é "Copilot".
+          echo "🤖 Solicitando review do GitHub Copilot no PR #$PR_NUMBER ..."
+          if gh api \
+              -X POST \
+              -H "Accept: application/vnd.github+json" \
+              "repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers" \
+              -f 'reviewers[]=Copilot' ; then
+            echo "✅ Copilot adicionado como revisor."
+          else
+            echo "⚠️  Não foi possível adicionar Copilot automaticamente."
+            echo "    Verifique se o Copilot code review está habilitado no repositório"
+            echo "    (Settings → Code & automation → Copilot)."
+          fi
