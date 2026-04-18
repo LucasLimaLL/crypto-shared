@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
           cache: 'gradle'
 
       - name: Grant execute permission for Gradle wrapper
@@ -72,16 +72,20 @@ jobs:
           BUMP="patch"
 
           if [ "$COMMIT_RANGE" = "HEAD" ]; then
-            COMMITS=$(git log --pretty=format:"%s%n%b" HEAD)
+            SUBJECTS=$(git log --pretty=format:"%s" HEAD)
+            BODIES=$(git log --pretty=format:"%b" HEAD)
           else
-            COMMITS=$(git log --pretty=format:"%s%n%b" "$COMMIT_RANGE")
+            SUBJECTS=$(git log --pretty=format:"%s" "$COMMIT_RANGE")
+            BODIES=$(git log --pretty=format:"%b" "$COMMIT_RANGE")
           fi
 
           # Check for breaking changes (major bump)
-          if echo "$COMMITS" | grep -qiE '(BREAKING CHANGE|BREAKING-CHANGE)|^[a-z]+(\(.+\))?!:'; then
+          # Breaking changes can appear as "!" before ":" in subject or "BREAKING CHANGE" in body
+          if echo "$BODIES" | grep -qiE 'BREAKING CHANGE|BREAKING-CHANGE' || \
+             echo "$SUBJECTS" | grep -qiE '^[a-z]+(\(.+\))?!:'; then
             BUMP="major"
           # Check for new features (minor bump)
-          elif echo "$COMMITS" | grep -qiE '^feat(\(.+\))?:'; then
+          elif echo "$SUBJECTS" | grep -qiE '^feat(\(.+\))?:'; then
             BUMP="minor"
           fi
 
