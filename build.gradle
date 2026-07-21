@@ -1,12 +1,14 @@
 plugins {
     id 'java-library'
+    id 'jacoco'
     id 'maven-publish'
     id 'checkstyle'
+    id 'org.sonarqube' version '6.2.0.5505'
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 }
 
 repositories {
@@ -20,13 +22,62 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-test { useJUnitPlatform() }
+// ── Tests ─────────────────────────────────────────────────────────────────────
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+// ── JaCoCo ────────────────────────────────────────────────────────────────────
+
+jacoco {
+    toolVersion = "0.8.12"
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+jacocoTestCoverageVerification {
+    dependsOn test
+    violationRules {
+        rule {
+            limit { counter = 'INSTRUCTION'; value = 'COVEREDRATIO'; minimum = 0.97 }
+            limit { counter = 'LINE';        value = 'COVEREDRATIO'; minimum = 0.97 }
+            limit { counter = 'BRANCH';      value = 'COVEREDRATIO'; minimum = 0.90 }
+            limit { counter = 'METHOD';      value = 'COVEREDRATIO'; minimum = 0.97 }
+            limit { counter = 'CLASS';       value = 'COVEREDRATIO'; minimum = 0.97 }
+        }
+    }
+}
+
+// ── Checkstyle ────────────────────────────────────────────────────────────────
 
 checkstyle {
     toolVersion = "10.21.4"
     configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
     maxWarnings = 0
 }
+
+// ── SonarQube ─────────────────────────────────────────────────────────────────
+
+sonar {
+    properties {
+        property "sonar.projectKey",                     "criptograma-shared"
+        property "sonar.projectName",                    "Criptograma Shared"
+        property "sonar.host.url",                       System.getenv("SONAR_HOST_URL") ?: "http://localhost:9000"
+        property "sonar.java.coveragePlugin",            "jacoco"
+        property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
+        property "sonar.qualitygate.wait",               "true"
+    }
+}
+
+// ── Publish ───────────────────────────────────────────────────────────────────
 
 publishing {
     publications {
