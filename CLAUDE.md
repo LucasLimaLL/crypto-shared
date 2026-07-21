@@ -28,7 +28,7 @@ Sem dependências de Android ou Firebase.
     → Zero android.* ou com.google.firebase.*
     → Toda lógica pura — sem I/O, sem rede
     → Java 21: sealed classes, records, pattern matching
-    → Javadoc em todas as classes e métodos públicos
+    → Zero comentários: nem //, nem /* */, nem Javadoc — código se autodocumenta
     → Testes para toda lógica pública
 
 ## Comandos

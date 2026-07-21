@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id 'checkstyle'
 }
 
 java {
@@ -20,6 +21,12 @@ dependencies {
 }
 
 test { useJUnitPlatform() }
+
+checkstyle {
+    toolVersion = "10.21.4"
+    configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
+    maxWarnings = 0
+}
 
 publishing {
     publications {
