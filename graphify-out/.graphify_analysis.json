@@ -1,0 +1,338 @@
+{
+  "communities": {
+    "0": [
+      "override",
+      "src_main_java_br_com_criptograma_shared_builder_gamebuilder",
+      "src_main_java_br_com_criptograma_shared_builder_gamebuilder_gamebuilder",
+      "src_main_java_br_com_criptograma_shared_builder_gamebuilder_gamebuilder_gamebuilder",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_applycipher",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_build",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_ciphermap",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_difficulty",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_hint",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_id",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_puzzlebuilder",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_rot13mapfor",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_solution",
+      "src_main_java_br_com_criptograma_shared_enums_difficultylevel",
+      "src_main_java_br_com_criptograma_shared_enums_difficultylevel_difficultylevel",
+      "src_main_java_br_com_criptograma_shared_enums_difficultylevel_difficultylevel_easy",
+      "src_main_java_br_com_criptograma_shared_enums_difficultylevel_difficultylevel_hard",
+      "src_main_java_br_com_criptograma_shared_enums_difficultylevel_difficultylevel_medium",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_asmap",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_containscipher",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_decode",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_encode",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_equals",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_hashcode",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_size",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_tostring",
+      "src_main_java_br_com_criptograma_shared_model_puzzle",
+      "src_main_java_br_com_criptograma_shared_model_puzzle_puzzle",
+      "src_main_java_br_com_criptograma_shared_normalizer_textnormalizer",
+      "src_main_java_br_com_criptograma_shared_normalizer_textnormalizer_textnormalizer",
+      "src_main_java_br_com_criptograma_shared_normalizer_textnormalizer_textnormalizer_textnormalizer",
+      "src_main_java_br_com_criptograma_shared_validator_puzzlevalidator",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest"
+    ],
+    "1": [
+      "org_junit_jupiter_api_test",
+      "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder_newpuzzle",
+      "src_main_java_br_com_criptograma_shared_normalizer_textnormalizer_textnormalizer_fordisplay",
+      "src_main_java_br_com_criptograma_shared_normalizer_textnormalizer_textnormalizer_lettersonly",
+      "src_main_java_br_com_criptograma_shared_normalizer_textnormalizer_textnormalizer_normalize",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_buildassignsrandomidwhennotprovided",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_builddefaultsdifficultytomedium",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_buildnormalizessolutiontouppercase",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_buildstoreshint",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_buildthrowswhensolutionisblank",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_buildthrowswhensolutionisnull",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_buildusesprovideddifficulty",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_buildusesprovidedid",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_buildwithsolutiongeneratesciphertext",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_ciphermapisconsistentwithciphertext",
+      "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest_ciphertexthassamelengthassolution",
+      "src_test_java_br_com_criptograma_shared_enums_enumstest",
+      "src_test_java_br_com_criptograma_shared_enums_enumstest_enumstest",
+      "src_test_java_br_com_criptograma_shared_enums_enumstest_enumstest_difficultylevelhasthreevalues",
+      "src_test_java_br_com_criptograma_shared_enums_enumstest_enumstest_gamemodehasthreevalues",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest_textnormalizertest",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest_textnormalizertest_fordisplaythrowsfornull",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest_textnormalizertest_fordisplaytrimsanduppercases",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest_textnormalizertest_lettersonlyremovesnonletters",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest_textnormalizertest_lettersonlystripsaccents",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest_textnormalizertest_normalizeconvertstouppercase",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest_textnormalizertest_normalizepreservesspacesandpunctuation",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest_textnormalizertest_normalizestripsaccents",
+      "src_test_java_br_com_criptograma_shared_normalizer_textnormalizertest_textnormalizertest_normalizethrowsfornull"
+    ],
+    "2": [
+      "src_main_java_br_com_criptograma_shared_builder_gamebuilder_gamebuilder_from",
+      "src_main_java_br_com_criptograma_shared_model_gameboard",
+      "src_main_java_br_com_criptograma_shared_model_gameboard_gameboard",
+      "src_main_java_br_com_criptograma_shared_model_gameboard_gameboard_confirmedcount",
+      "src_main_java_br_com_criptograma_shared_model_gameboard_gameboard_issolved",
+      "src_main_java_br_com_criptograma_shared_model_gameboard_gameboard_withhintused",
+      "src_main_java_br_com_criptograma_shared_model_gameboard_gameboard_withletterat",
+      "src_test_java_br_com_criptograma_shared_builder_gamebuildertest",
+      "src_test_java_br_com_criptograma_shared_builder_gamebuildertest_gamebuildertest",
+      "src_test_java_br_com_criptograma_shared_builder_gamebuildertest_gamebuildertest_alllettersstartempty",
+      "src_test_java_br_com_criptograma_shared_builder_gamebuildertest_gamebuildertest_boardhasoneletterpercipherletter",
+      "src_test_java_br_com_criptograma_shared_builder_gamebuildertest_gamebuildertest_hintsusedstartsatzero",
+      "src_test_java_br_com_criptograma_shared_builder_gamebuildertest_gamebuildertest_puzzle",
+      "src_test_java_br_com_criptograma_shared_builder_gamebuildertest_gamebuildertest_spacesareexcludedfromletterlist",
+      "src_test_java_br_com_criptograma_shared_builder_gamebuildertest_gamebuildertest_throwsfornullpuzzle",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest_gameboardtest",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest_gameboardtest_anypuzzle",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest_gameboardtest_confirmedcountstartsatzero",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest_gameboardtest_issolvedwhenalllettersconfirmed",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest_gameboardtest_letterslistisunmodifiable",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest_gameboardtest_newboardisnotsolved",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest_gameboardtest_withhintusedincrementscounter",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest_gameboardtest_withletteratreplacesletteratindex",
+      "src_test_java_br_com_criptograma_shared_model_gameboardtest_gameboardtest_withletteratthrowsforinvalidindex"
+    ],
+    "3": [
+      "src_main_java_br_com_criptograma_shared_model_letter",
+      "src_main_java_br_com_criptograma_shared_model_letter_letter",
+      "src_main_java_br_com_criptograma_shared_model_letter_letter_clear",
+      "src_main_java_br_com_criptograma_shared_model_letter_letter_confirm",
+      "src_main_java_br_com_criptograma_shared_model_letter_letter_isempty",
+      "src_main_java_br_com_criptograma_shared_model_letter_letter_reveal",
+      "src_main_java_br_com_criptograma_shared_model_letter_letter_withguess",
+      "src_test_java_br_com_criptograma_shared_model_lettertest",
+      "src_test_java_br_com_criptograma_shared_model_lettertest_lettertest",
+      "src_test_java_br_com_criptograma_shared_model_lettertest_lettertest_clearremovesguessandflags",
+      "src_test_java_br_com_criptograma_shared_model_lettertest_lettertest_confirmlocksletter",
+      "src_test_java_br_com_criptograma_shared_model_lettertest_lettertest_newletterisempty",
+      "src_test_java_br_com_criptograma_shared_model_lettertest_lettertest_rejectsconfirmedwithoutguess",
+      "src_test_java_br_com_criptograma_shared_model_lettertest_lettertest_rejectslowercasecipherchar",
+      "src_test_java_br_com_criptograma_shared_model_lettertest_lettertest_revealsetsguessandconfirmedandrevealed",
+      "src_test_java_br_com_criptograma_shared_model_lettertest_lettertest_withguessaddsguesswithoutconfirming",
+      "src_test_java_br_com_criptograma_shared_model_lettertest_lettertest_withguessnormalizestouppercase"
+    ],
+    "4": [
+      "src_main_java_br_com_criptograma_shared_validator_guessvalidator",
+      "src_main_java_br_com_criptograma_shared_validator_guessvalidator_guessvalidator",
+      "src_main_java_br_com_criptograma_shared_validator_guessvalidator_guessvalidator_guessvalidator",
+      "src_main_java_br_com_criptograma_shared_validator_guessvalidator_guessvalidator_validate",
+      "src_main_java_br_com_criptograma_shared_validator_guessvalidator_guessvalidator_validatecredential",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_board",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_confirmedletterisrejected",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_credentialrejectedwhenblank",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_credentialrejectedwhentooshort",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_credentialvalidforminimumlength",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_digitguessisrejected",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_negativeindexisrejected",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_nullboardisrejected",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_outofboundsindexisrejected",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_revealedletterisrejected",
+      "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest_validguessisaccepted"
+    ],
+    "5": [
+      "src_main_java_br_com_criptograma_shared_validator_puzzlevalidator_puzzlevalidator",
+      "src_main_java_br_com_criptograma_shared_validator_puzzlevalidator_puzzlevalidator_puzzlevalidator",
+      "src_main_java_br_com_criptograma_shared_validator_puzzlevalidator_puzzlevalidator_validate",
+      "src_main_java_br_com_criptograma_shared_validator_validationresult",
+      "src_main_java_br_com_criptograma_shared_validator_validationresult_invalid",
+      "src_main_java_br_com_criptograma_shared_validator_validationresult_valid",
+      "src_main_java_br_com_criptograma_shared_validator_validationresult_validationresult",
+      "src_main_java_br_com_criptograma_shared_validator_validationresult_validationresult_invalid",
+      "src_main_java_br_com_criptograma_shared_validator_validationresult_validationresult_isvalid",
+      "src_main_java_br_com_criptograma_shared_validator_validationresult_validationresult_valid",
+      "src_test_java_br_com_criptograma_shared_validator_validationresulttest",
+      "src_test_java_br_com_criptograma_shared_validator_validationresulttest_validationresulttest",
+      "src_test_java_br_com_criptograma_shared_validator_validationresulttest_validationresulttest_invalidcarriesreason",
+      "src_test_java_br_com_criptograma_shared_validator_validationresulttest_validationresulttest_invalidisnotvalid",
+      "src_test_java_br_com_criptograma_shared_validator_validationresulttest_validationresulttest_invalidrejectsblankreason",
+      "src_test_java_br_com_criptograma_shared_validator_validationresulttest_validationresulttest_patternmatchingexhaustive",
+      "src_test_java_br_com_criptograma_shared_validator_validationresulttest_validationresulttest_validisvalid"
+    ],
+    "6": [
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_ciphermap",
+      "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap_of",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_asmapreturnsunmodifiableview",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_containscipherreturnsfalseforunmappedkey",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_containscipherreturnstrueformappedkey",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_decodescorrectly",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_decodethrowsforunknowncipherchar",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_encodescorrectly",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_equalmapsareequal",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_rejectslowercasecipherkey",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_rejectsnonbijectivemapping",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_rejectsnullmapping",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_simplemap",
+      "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest_sizereflectsnumberofmappings"
+    ],
+    "7": [
+      "src_main_java_br_com_criptograma_shared_enums_gamemode",
+      "src_main_java_br_com_criptograma_shared_enums_gamemode_gamemode",
+      "src_main_java_br_com_criptograma_shared_enums_gamemode_gamemode_classic",
+      "src_main_java_br_com_criptograma_shared_enums_gamemode_gamemode_theme",
+      "src_main_java_br_com_criptograma_shared_enums_gamemode_gamemode_timed"
+    ],
+    "8": [
+      "gradlew",
+      "gradlew__entry",
+      "gradlew_die",
+      "gradlew_warn"
+    ],
+    "9": [
+      "scripts_finalize_setup_sh__entry",
+      "scripts_finalize_setup_sh_scripts_finalize_setup"
+    ],
+    "10": [
+      "scripts_install_gradle_wrapper",
+      "scripts_install_gradle_wrapper_sh__entry"
+    ],
+    "11": [
+      "build"
+    ],
+    "12": [
+      "scripts_finalize_setup_ps1_scripts_finalize_setup"
+    ],
+    "13": [
+      "settings"
+    ]
+  },
+  "cohesion": {
+    "0": 0.08771929824561403,
+    "1": 0.14193548387096774,
+    "2": 0.18115942028985507,
+    "3": 0.17647058823529413,
+    "4": 0.22794117647058823,
+    "5": 0.17647058823529413,
+    "6": 0.21666666666666667,
+    "7": 0.4,
+    "8": 0.8333333333333334,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0
+  },
+  "gods": [
+    {
+      "id": "src_main_java_br_com_criptograma_shared_model_letter_letter",
+      "label": "Letter",
+      "degree": 19
+    },
+    {
+      "id": "src_main_java_br_com_criptograma_shared_model_ciphermap_ciphermap",
+      "label": "CipherMap",
+      "degree": 18
+    },
+    {
+      "id": "src_main_java_br_com_criptograma_shared_builder_puzzlebuilder_puzzlebuilder",
+      "label": "PuzzleBuilder",
+      "degree": 15
+    },
+    {
+      "id": "src_main_java_br_com_criptograma_shared_model_gameboard_gameboard",
+      "label": "GameBoard",
+      "degree": 14
+    },
+    {
+      "id": "src_main_java_br_com_criptograma_shared_model_puzzle_puzzle",
+      "label": "Puzzle",
+      "degree": 14
+    },
+    {
+      "id": "src_test_java_br_com_criptograma_shared_model_ciphermaptest_ciphermaptest",
+      "label": "CipherMapTest",
+      "degree": 13
+    },
+    {
+      "id": "src_test_java_br_com_criptograma_shared_builder_puzzlebuildertest_puzzlebuildertest",
+      "label": "PuzzleBuilderTest",
+      "degree": 12
+    },
+    {
+      "id": "src_test_java_br_com_criptograma_shared_validator_guessvalidatortest_guessvalidatortest",
+      "label": "GuessValidatorTest",
+      "degree": 12
+    },
+    {
+      "id": "src_main_java_br_com_criptograma_shared_enums_difficultylevel_difficultylevel",
+      "label": "DifficultyLevel",
+      "degree": 10
+    },
+    {
+      "id": "src_main_java_br_com_criptograma_shared_validator_validationresult_validationresult",
+      "label": "ValidationResult",
+      "degree": 9
+    }
+  ],
+  "surprises": [
+    {
+      "source": "GameBoard",
+      "target": "Letter",
+      "source_files": [
+        "src/main/java/br/com/criptograma/shared/model/GameBoard.java",
+        "src/main/java/br/com/criptograma/shared/model/Letter.java"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "GameBoard",
+      "target": "Puzzle",
+      "source_files": [
+        "src/main/java/br/com/criptograma/shared/model/GameBoard.java",
+        "src/main/java/br/com/criptograma/shared/model/Puzzle.java"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "PuzzleBuilder",
+      "target": "DifficultyLevel",
+      "source_files": [
+        "src/main/java/br/com/criptograma/shared/builder/PuzzleBuilder.java",
+        "src/main/java/br/com/criptograma/shared/enums/DifficultyLevel.java"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "PuzzleBuilder",
+      "target": "CipherMap",
+      "source_files": [
+        "src/main/java/br/com/criptograma/shared/builder/PuzzleBuilder.java",
+        "src/main/java/br/com/criptograma/shared/model/CipherMap.java"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "Puzzle",
+      "target": "DifficultyLevel",
+      "source_files": [
+        "src/main/java/br/com/criptograma/shared/model/Puzzle.java",
+        "src/main/java/br/com/criptograma/shared/enums/DifficultyLevel.java"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

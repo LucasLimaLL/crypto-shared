@@ -1,0 +1,137 @@
+{
+  "build.gradle": {
+    "mtime": 1784664039.7188325,
+    "ast_hash": "937cd96b1b441113ecc639364ebfad20",
+    "semantic_hash": "937cd96b1b441113ecc639364ebfad20"
+  },
+  "gradlew": {
+    "mtime": 1776537169.893821,
+    "ast_hash": "794669d78aef1dd5c7d889ef618b311a",
+    "semantic_hash": "794669d78aef1dd5c7d889ef618b311a"
+  },
+  "scripts/finalize-setup.ps1": {
+    "mtime": 1776449632.3294182,
+    "ast_hash": "fddc3ff3fe5547b256c66f28190eac97",
+    "semantic_hash": "fddc3ff3fe5547b256c66f28190eac97"
+  },
+  "scripts/finalize-setup.sh": {
+    "mtime": 1776450271.6873634,
+    "ast_hash": "f03247442d1c6f5590a8112cf749cc19",
+    "semantic_hash": "f03247442d1c6f5590a8112cf749cc19"
+  },
+  "scripts/install-gradle-wrapper.sh": {
+    "mtime": 1776450829.80363,
+    "ast_hash": "7ff68d7ac88a2aa9d30a2120b5c00610",
+    "semantic_hash": "7ff68d7ac88a2aa9d30a2120b5c00610"
+  },
+  "settings.gradle": {
+    "mtime": 1776449556.2489152,
+    "ast_hash": "45beb9c99de750e35a11b6ca30595332",
+    "semantic_hash": "45beb9c99de750e35a11b6ca30595332"
+  },
+  "src/main/java/br/com/criptograma/shared/builder/GameBuilder.java": {
+    "mtime": 1784656943.613581,
+    "ast_hash": "3ec28b768d3b2ed1e13b01579d5d8d79",
+    "semantic_hash": "3ec28b768d3b2ed1e13b01579d5d8d79"
+  },
+  "src/main/java/br/com/criptograma/shared/builder/PuzzleBuilder.java": {
+    "mtime": 1784656937.227249,
+    "ast_hash": "f5e3067b69ff1096aa086659a48a75dc",
+    "semantic_hash": "f5e3067b69ff1096aa086659a48a75dc"
+  },
+  "src/main/java/br/com/criptograma/shared/enums/DifficultyLevel.java": {
+    "mtime": 1784656800.3321154,
+    "ast_hash": "43d5fe5e20c5195174fcd9e2e39ae332",
+    "semantic_hash": "43d5fe5e20c5195174fcd9e2e39ae332"
+  },
+  "src/main/java/br/com/criptograma/shared/enums/GameMode.java": {
+    "mtime": 1784656804.1946826,
+    "ast_hash": "97455105051a5833f78c5b60aa77a11b",
+    "semantic_hash": "97455105051a5833f78c5b60aa77a11b"
+  },
+  "src/main/java/br/com/criptograma/shared/model/CipherMap.java": {
+    "mtime": 1784656816.1846983,
+    "ast_hash": "f5e6dabc7eb07ab832a7bf295ec347a8",
+    "semantic_hash": "f5e6dabc7eb07ab832a7bf295ec347a8"
+  },
+  "src/main/java/br/com/criptograma/shared/model/GameBoard.java": {
+    "mtime": 1784656859.0497646,
+    "ast_hash": "aed6114dd259e772f108036773e90c6d",
+    "semantic_hash": "aed6114dd259e772f108036773e90c6d"
+  },
+  "src/main/java/br/com/criptograma/shared/model/Letter.java": {
+    "mtime": 1784656851.027974,
+    "ast_hash": "0330479053fddf87cf12a2d6404f4daf",
+    "semantic_hash": "0330479053fddf87cf12a2d6404f4daf"
+  },
+  "src/main/java/br/com/criptograma/shared/model/Puzzle.java": {
+    "mtime": 1784656822.496237,
+    "ast_hash": "ec87a8b16fe277a1cd5a62496fae1341",
+    "semantic_hash": "ec87a8b16fe277a1cd5a62496fae1341"
+  },
+  "src/main/java/br/com/criptograma/shared/normalizer/TextNormalizer.java": {
+    "mtime": 1784656867.6009195,
+    "ast_hash": "2ac22d704a61d8ed02296cc50f4b15a4",
+    "semantic_hash": "2ac22d704a61d8ed02296cc50f4b15a4"
+  },
+  "src/main/java/br/com/criptograma/shared/validator/GuessValidator.java": {
+    "mtime": 1784656887.9563787,
+    "ast_hash": "53fee9d98f792cf5afc94b2c6af3702a",
+    "semantic_hash": "53fee9d98f792cf5afc94b2c6af3702a"
+  },
+  "src/main/java/br/com/criptograma/shared/validator/PuzzleValidator.java": {
+    "mtime": 1784656875.7225718,
+    "ast_hash": "a3b8e808d81f8854c447900c63328a81",
+    "semantic_hash": "a3b8e808d81f8854c447900c63328a81"
+  },
+  "src/main/java/br/com/criptograma/shared/validator/ValidationResult.java": {
+    "mtime": 1784656880.4397428,
+    "ast_hash": "544fef7eb0681f16ddbf41a5bbb2b938",
+    "semantic_hash": "544fef7eb0681f16ddbf41a5bbb2b938"
+  },
+  "src/test/java/br/com/criptograma/shared/builder/GameBuilderTest.java": {
+    "mtime": 1784657050.806728,
+    "ast_hash": "84a7c08e278e5f6c2c81841962aa54af",
+    "semantic_hash": "84a7c08e278e5f6c2c81841962aa54af"
+  },
+  "src/test/java/br/com/criptograma/shared/builder/PuzzleBuilderTest.java": {
+    "mtime": 1784657035.894076,
+    "ast_hash": "c419ee6f12e66350985688791c29704e",
+    "semantic_hash": "c419ee6f12e66350985688791c29704e"
+  },
+  "src/test/java/br/com/criptograma/shared/enums/EnumsTest.java": {
+    "mtime": 1784656950.1539342,
+    "ast_hash": "394a638e741ec4e9ac9920dae5268b2d",
+    "semantic_hash": "394a638e741ec4e9ac9920dae5268b2d"
+  },
+  "src/test/java/br/com/criptograma/shared/model/CipherMapTest.java": {
+    "mtime": 1784656960.8203003,
+    "ast_hash": "33c71a0763a47931ddea755df5e5a616",
+    "semantic_hash": "33c71a0763a47931ddea755df5e5a616"
+  },
+  "src/test/java/br/com/criptograma/shared/model/GameBoardTest.java": {
+    "mtime": 1784656991.9357824,
+    "ast_hash": "897996e1f83e9171945e03d6cc4d2f19",
+    "semantic_hash": "897996e1f83e9171945e03d6cc4d2f19"
+  },
+  "src/test/java/br/com/criptograma/shared/model/LetterTest.java": {
+    "mtime": 1784656973.0370748,
+    "ast_hash": "3338fe5d34f42c94dfbe1feabbebc47d",
+    "semantic_hash": "3338fe5d34f42c94dfbe1feabbebc47d"
+  },
+  "src/test/java/br/com/criptograma/shared/normalizer/TextNormalizerTest.java": {
+    "mtime": 1784657000.627838,
+    "ast_hash": "10eb833f655770935e7316320b26e824",
+    "semantic_hash": "10eb833f655770935e7316320b26e824"
+  },
+  "src/test/java/br/com/criptograma/shared/validator/GuessValidatorTest.java": {
+    "mtime": 1784657021.954748,
+    "ast_hash": "1c8809b102c80779b2f00a77beb6ad5e",
+    "semantic_hash": "1c8809b102c80779b2f00a77beb6ad5e"
+  },
+  "src/test/java/br/com/criptograma/shared/validator/ValidationResultTest.java": {
+    "mtime": 1784657009.2078106,
+    "ast_hash": "fad8b83c50fca21277f25f3887237410",
+    "semantic_hash": "fad8b83c50fca21277f25f3887237410"
+  }
+}
